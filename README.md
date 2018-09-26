@@ -1,9 +1,9 @@
-#Sections
+# Sections
 
 In the new locomotivecms version, **Sections** are a key concept.
 Like snippets, sections includes a piece of code in a page, and in addition, sections provide a powerfull way to let your users update their website on the fly by changing texts and images but also by adding new sections, re-ordering them and updating their content.
 
-##What is a section ect
+## What is a section ect
 
 A section is a piece of **HTML content** that comes with a **JSON definition** and is integrated in a page of a locomotivecms site.
 
@@ -27,7 +27,7 @@ To include sections in a page you have 3 options:
 
 - Define global sections that will be available accross all the pages.
 
-##Add a section
+## Add a section
 
 ### The wagon generator
 
@@ -40,7 +40,7 @@ The following command create a new section named `hello_world`
 You will be asked various question and the generator will build a section with some code exemple that suit your needs.
 You should see a new file named `hello_world.liquid` in the `/sections` folder.
 
-##Define a sections
+## Define a sections
 
 A section is composed of two essential elements: a JSON definition and an HTML content, all packaged inside a liquid file like so :
 
@@ -55,7 +55,7 @@ HTML Content
 
 The name of the file will be use as id in the Locomotivecms engine.
 
-####- Json definition
+#### - Json definition
 
 The Json definition of a section contains all informations about how your user will customize your section. You can control what show up on the editor view and what are the settings you provide to customize the page.
 
@@ -134,7 +134,7 @@ The Json definition of a section contains all informations about how your user w
 }
 ```
 
-#####Mendatories:
+##### Mendatories:
 
 - A **name** that act as label in the editor.
 - An array of **settings** that will be editable for personalization. **Settings** should have an *id*, a *label*, and a *type*. Type should be one of the following:
@@ -150,7 +150,7 @@ The Json definition of a section contains all informations about how your user w
 - An array of **blocks**. **Blocks** must have *name*, *type* and an array of *settings*. If you have define multiple block types in your section, the editor will prompt a button to add blocks form a list of block types. Once choose, your user can edit them using the settings you provided. When editing the section, the user can add/order/remove the **blocks**.
 *Here be screenshots*
 
-#####Content definition
+##### Content definition
 
 To have your section listed in the editor when a user click on "*add a section*" on a dropzone, you have to provide at least one **presets**. **presets** come with a name to label them in the sections list and a category to sort them. Inside a **presets** you can override settings and define what blocks you want your user to start with.
 
@@ -164,7 +164,7 @@ If your section is fix or global, it is recommended to add a **default** to the 
 - ***keep_name*** : Boolean to force the display of the section name instead of the first text setting.
 - ***blocks_label*** : Label to display at the top of the block selection in the editor.
 
-####- HTML content
+#### - HTML content
 
 Sections use the same liquid syntaxe as the rest of the locomotivecms framework.
 When in a section HTML you are provided with a `section` object that contains all the content of your section.
@@ -190,7 +190,7 @@ The block object provided contains all the settings inside a settings hash, form
 
 There is some extra data you can acces in your section or block like type and name :`{{ section.type }}` or `{{ block.type }}`
 
-##Call a section
+## Call a section
 
 There is three tags that can be used to call your section:
 
@@ -220,7 +220,7 @@ If you provide a section dropzone tag, locomotivecms will wrap your sections in 
 If you privide section with the fix or global section tag, the HTML content will be wrapped inside a div with the section's id optionally passed a the div's id. Again you can add classes to this div by using the class property in the JSON definition.
 
 
-##Content of a section:
+## Content of a section:
 
 If you define a global section, the content will be loaded from the default definition of your section if no content has been provided by the user.
 If you place a dropzone in your page, you can fill it in the yaml definition of your page. Use the sections_dropzone_content field to define the sections you want to show by default if no content where provided.
@@ -246,13 +246,13 @@ sections_content: >
   }
 ```
 
-##Deploy a Section
+## Deploy a Section
 
 `bundle exec wagon deploy <ENV> -r <PAGE> -f hello_world.liquid -d -v`
 
 you can filter the section you want to push with the -f option
 
-##JS integration
+## JS integration
 
 The editor is a dynamic ReactJs Component that will modify your website in an iframe as your user add/remove/edit the section you provide.
 To follow all this changes in the iframe, the editor will fire multiple events types you can listen.
