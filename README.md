@@ -3,7 +3,7 @@
 In the new locomotivecms version, **Sections** are a key concept.
 Like snippets, sections includes a piece of code in a page, and in addition, provide a powerful way to let users update their website on the fly by changing texts and images, but also by adding new sections, re-ordering them and updating their content.
 
-## What is a section ect
+## What is a section
 
 A section is a piece of **HTML content** that comes with a **JSON definition**. It is integrated in a page of a locomotivecms site.
 
