@@ -248,9 +248,6 @@ sections_content: >
 
 ## Deploy a Section
 
-`bundle exec wagon deploy <ENV> -r <PAGE> -f hello_world.liquid -d -v`
-
-you can filter the section you want to push with the -f option
 
 ## JS integration
 
