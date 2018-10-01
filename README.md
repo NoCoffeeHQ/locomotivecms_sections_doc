@@ -139,13 +139,15 @@ The Json definition of a section contains all informations about how your user w
 - A **name** that acts as label in the editor.
 - An array of **settings** that will be editable for customization. **Settings** should have an *id*, a *label*, and a *type*. Type should be one of the following:
 
-      Type      |       Use
---------------- | ---------------------------------------------------------------------------------------------------------
-`text`          | Display a text input. <br> Texts can be edited with HTML by passing `"html": true` in the setting definition, this will enable severals format options in the editor. <br> You can choose `<br>` over `<p>` by using the `"line_break": true` option. <br> You can also choose the size of the text area as a number of rows: `"nb_rows": 10`
-`radio`         | Display a radio button in the editor with the options provided with : ```"options": [{"label": "option 1","value": "1"},{"label": "option 2", "value": "2"}]```
-`checkbox`      | Display a checkbox in the editor. Values of the checkbox are true/false.
-`image_picker`  | Add an image picker to the editor. <br> You can add a cropper to let your users resize their images. To do so, add `"height": "100", "width": "100"` to your settings to let user crop image to any size with same aspect ratio (the image must be larger than 100x100).
-`url`           | Add an url picker to the editor.
+|      Type      |       Use |
+| --------------- | ----------- |
+| `text`          | Display a text input. <br> Texts can be edited with HTML by passing `"html": true` in the setting definition, this will enable severals format options in the editor. <br> You can choose `<br>` over `<p>` by using the `"line_break": true` option. <br> You can also choose the size of the text area as a number of rows: `"nb_rows": 10` |
+| `radio`         | Display a radio button in the editor with the options provided with : ```"options": [{"label": "option 1","value": "1"},{"label": "option 2", "value": "2"}]``` |
+| `checkbox`      | Display a checkbox in the editor. Values of the checkbox are true/false. |
+| `image_picker`  | Add an image picker to the editor. <br> You can add a cropper to let your users resize their images. To do so, add `"height": "100", "width": "100"` to your settings to let user crop image to any size with same aspect ratio (the image must be larger than 100x100). |
+| `url`           | Add an url picker to the editor. |
+| `content_type`  | Add a link to a specific content type edition panel |
+| `hint`          | Add some text in the edition panel for the admin to read | 
 
 - An array of **blocks**. **Blocks** must have a *name*, a *type* and an array of *settings*. If you have define multiple block types in your section, the editor will show a button to add blocks from a list of block types. Once chosen, your user can edit them using the settings you provided. When editing the section, the user can add/order/remove the **blocks**.
 *Here be screenshots*
