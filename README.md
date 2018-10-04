@@ -23,7 +23,7 @@ To include sections in a page, you have 3 options:
 
 - Let a complete freedom of choice to your user by defining a section_dropzone, where users will choose what section to add from a catalogue you provide.
 
-- Fix section that will be editable by users but will not be movable.
+- Fixed section that will be editable by users but will not be movable.
 
 - Define global sections that will be available accross all pages.
 
@@ -165,6 +165,7 @@ If your section is fixed or global, it is recommended to add a **default** to th
 - ***keep_icon*** : Boolean to force the display of the icon in the editor instead of the first image setting.
 - ***keep_name*** : Boolean to force the display of the section name instead of the first text setting.
 - ***blocks_label*** : Label to display at the top of the block selection in the editor.
+- ***
 
 #### - HTML content
 
@@ -196,9 +197,9 @@ There is some extra data you can access in your section or block like type and n
 
 There is three tags that can be used to call your section:
 
-### Fix sections
+### Fixed sections
 
-The tag `{% section 'hello_world %}` is used to add a section to a page. This section will be fixed in the page and your user will only be able to edit the content without being able to order or remove the section.
+The tag `{% section 'hello_world %}` is used to add a section to a page. This section will be fixed in the page and your user will only be able to edit the content without being able to move or remove the section.
 You can call multiple times the same section on the same page. because of that, it is recommended to pass an id to the tag to keep tracks of the section content as it may be moved aroud the page in futur developpements and may be mixed up with section of the same type : `{% section 'hello_world', id: 'morning' %}`
 
 ### Section dropzone
@@ -214,6 +215,19 @@ Then it will be easy for them to edit the content, reorder the sections, add or 
 
 If you want to add a section that holds its content all over the website, you can use the tag `{% global_section 'hello_word' %}`
 This will display a fixed section in the editor but the content your user edits will be shared across pages. This is useful for header, footer and nav sections.
+
+By default, in the editor UI, global sections will appear before the section dropzone. If you want your section to be at the bottom of the list of sections, you'll have to precise the `placement` option. This option takes 2 values: **top** and **bottom**.
+
+Example:
+
+```
+{% global_section nav, placement: 'top' %}
+
+{% sections_dropzone %}
+
+{% global_section my_awesome_footer, placement: 'footer' %}
+```
+
 
 ### Locomotive wrapping
 
